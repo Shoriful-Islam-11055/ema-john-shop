@@ -12,9 +12,8 @@ const Products = (props) => {
             <div className='py-3'>
                 <div className='px-3'>
                     <h5>{name}</h5>
-                    <p>Price: {price}</p>
-                    <p>Rating: ${ratings}</p>
-                    <p>Seller: {seller}</p>
+                    <p>Price: ${price}</p>
+                    <p>Rating: {ratings}</p>
                     <p>Seller: {seller}</p>
                 </div>
             </div>
