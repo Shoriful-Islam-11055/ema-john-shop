@@ -1,0 +1,9 @@
+.review-item-img{
+    width: 80px;
+    height: 100%;
+    margin-right: 10px;
+}
+.btn-icon{
+    background-color: black;
+    border-radius: 50%;
+}
