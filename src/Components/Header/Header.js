@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import logo from "../../images/Logo.svg";
 
 const Header = () => {
@@ -19,7 +20,7 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="/shop">Shop</Nav.Link>
+              <Link to ='/shop'><Nav.Link href="/shop">Shop</Nav.Link></Link>
               <Nav.Link eventKey={2} href="/order">
                 Order
               </Nav.Link>

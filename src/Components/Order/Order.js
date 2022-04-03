@@ -1,5 +1,6 @@
 import React from "react";
-import { Card, ListGroup } from "react-bootstrap";
+import { Button, Card, ListGroup } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import useCart from "../../hooks/useCart";
 import useProducts from "../../hooks/useProducts";
 import { removeFromDb } from "../../utilities/fakedb";
@@ -22,7 +23,9 @@ const Order = () => {
         <div className="row g-0">
           <div className="col-md-6">
             <h2>Total Products : {products.length}</h2>
-            <Cart cart={cart}></Cart>
+            <Cart cart={cart}>
+                <Link to ='/inventory'><Button>inventory</Button></Link>
+            </Cart>
           </div>
           <div className="col-md-6">
             <div className="Card.Body">
