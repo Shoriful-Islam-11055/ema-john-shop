@@ -4,7 +4,8 @@ import { Button, Card, ListGroup } from "react-bootstrap";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import "./ReviewItems.css";
 
-const ReviewItems = ({ product }) => {
+const ReviewItems = (props) => {
+ const {product, handleRemoveProduct} = props;
   const { name, img, price, shipping, quentity } = product;
   return (
     <div>
@@ -23,7 +24,7 @@ const ReviewItems = ({ product }) => {
                     </div>
                 </div>
                 <div>
-                    <Button className="btn-icon">
+                    <Button onClick={()=> handleRemoveProduct(product)} className="btn-icon">
                     <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
                     </Button>
                 </div>
