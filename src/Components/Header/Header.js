@@ -1,35 +1,40 @@
-import React from 'react';
-import logo from "../../images/Logo.svg"
+import React from "react";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import logo from "../../images/Logo.svg";
 
 const Header = () => {
-    return (
-        <div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-3">
-                <div className="container container-fluid">
-                        <a className="navbar-brand" href="#"><img src={logo} alt="" /></a>
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                        </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                            <a className="nav-link active me-2" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li className="nav-item">
-                            <a className="nav-link me-2" href="#">Order</a>
-                            </li>
-                            <li className="nav-item">
-                            <a className="nav-link me-2" href="#">Order Review</a>
-                            </li>
-                            <li className="nav-item">
-                            <a className="nav-link me-2" href="#">Manage Inventory</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    );
+  return (
+    <div>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
+        <Container>
+          <Navbar.Brand href="#home">
+            <img
+              alt=""
+              src={logo}
+              width="100"
+              height="60"
+              className="d-inline-block align-top"
+            />{" "}
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="ms-auto">
+              <Nav.Link href="#deets">Shop</Nav.Link>
+              <Nav.Link eventKey={2} href="#memes">
+                Order
+              </Nav.Link>
+              <Nav.Link eventKey={3} href="#memes">
+                Inventory
+              </Nav.Link>
+              <Nav.Link eventKey={4} href="#memes">
+                About
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </div>
+  );
 };
 
 export default Header;
