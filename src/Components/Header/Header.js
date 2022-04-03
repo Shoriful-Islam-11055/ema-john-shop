@@ -7,7 +7,7 @@ const Header = () => {
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/shop">
             <img
               alt=""
               src={logo}
@@ -19,14 +19,14 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="#deets">Shop</Nav.Link>
-              <Nav.Link eventKey={2} href="#memes">
+              <Nav.Link href="/shop">Shop</Nav.Link>
+              <Nav.Link eventKey={2} href="/order">
                 Order
               </Nav.Link>
-              <Nav.Link eventKey={3} href="#memes">
+              <Nav.Link eventKey={3} href="/inventory">
                 Inventory
               </Nav.Link>
-              <Nav.Link eventKey={4} href="#memes">
+              <Nav.Link eventKey={4} href="/about">
                 About
               </Nav.Link>
             </Nav>
