@@ -7,7 +7,6 @@ import {
   Line,
   Tooltip,
   LineChart,
-  ResponsiveContainer,
   XAxis,
   YAxis,
   Area,
