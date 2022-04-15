@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, NavLink } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useProducts from '../../hooks/useProducts';
 import { addToDb, getStoredCart } from '../../utilities/fakedb';
