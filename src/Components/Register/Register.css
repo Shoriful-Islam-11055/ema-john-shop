@@ -15,7 +15,7 @@ h5{
 .img-or{
     width: 90%;
     padding: 5px;
-    margin: 5px 0px 15px 20px;
+    margin: 5px 0px 10px 20px;
 }
 
 @media (max-width: 1000px) and (min-width:610px) {
