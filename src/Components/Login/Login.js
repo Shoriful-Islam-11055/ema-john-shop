@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import {useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import logo from "../../images/hr-line.PNG";
 import "../Register/Register.css";
@@ -13,7 +13,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-
+  
   const [
     signInWithEmailAndPassword,
     user,
@@ -21,6 +21,8 @@ const Login = () => {
     error,
   ] = useSignInWithEmailAndPassword(auth);
 
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
 
   const handleEmailBlur = (event) => {
     setEmail(event.target.value);
@@ -42,8 +44,7 @@ const Login = () => {
   };
  
   if(user){
-    navigate('/');
-    console.log('hello')
+    navigate(from, { replace: true });
   }
 
   return (

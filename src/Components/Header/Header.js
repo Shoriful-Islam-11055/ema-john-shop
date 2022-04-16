@@ -1,9 +1,13 @@
 import React from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../firebase.init";
 import logo from "../../images/Logo.svg";
 
 const Header = () => {
+  const [user] = useAuthState(auth);
+
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
@@ -45,10 +49,14 @@ const Header = () => {
             <Nav className="ms-auto">
               <div className="navbar-nav">
                 <Link className="nav-link" to="/register">
-                  <Button variant="outline-info">Register</Button>
+                  <Button variant="outline-info">SIGN UP<title className="text-white">Create a account</title></Button>
                 </Link>
                 <Link className="nav-link" to="/login">
-                  <Button variant="outline-info">LOGIN</Button>
+                  {
+                    user ? <Button variant="outline-info">LOGIN OUT</Button> :
+                    <Button variant="outline-info">LOGIN</Button>
+                    
+                  }
                 </Link>
               </div>
             </Nav>
