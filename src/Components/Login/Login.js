@@ -46,7 +46,8 @@ const Login = () => {
   if(user){
     navigate(from, { replace: true });
   }
-
+ 
+  
   return (
     <div className="register-container vh-100 fixed-top">
       <Form
@@ -58,6 +59,7 @@ const Login = () => {
         <h3 className="text-center">Sign In</h3>
         <p className="text-center fs-1 font-monospace">
           <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon>
+         
         </p>
         <Form.Group className="mb-3" controlId="validationCustom01">
           <Form.Label>Email address</Form.Label>
@@ -66,7 +68,7 @@ const Login = () => {
             required
             type="email"
             placeholder="Enter email"
-            defaultValue="hello@gmail.com"
+            // defaultValue="hello@gmail.com"
           />
           <Form.Control.Feedback type="invalid">
             Please provide a valid email.
@@ -85,7 +87,7 @@ const Login = () => {
             Please provide a valid password.
           </Form.Control.Feedback>
         </Form.Group>
-        <p style={{color : 'red'}}>{error}</p>
+        {error ? <p style={{color : 'red'}}>{error.message}</p>: ''}
         <div className="d-grid gap-2">
           <Button type="submit" variant="secondary" size="lg">
             Sign In

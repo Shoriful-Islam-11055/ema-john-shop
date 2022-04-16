@@ -1,3 +1,4 @@
+import { signOut } from "firebase/auth";
 import React from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -8,6 +9,9 @@ import logo from "../../images/Logo.svg";
 const Header = () => {
   const [user] = useAuthState(auth);
 
+  const handleSignOut = () => {
+    signOut(auth);
+  };
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
@@ -22,7 +26,7 @@ const Header = () => {
             />{" "}
             <img
               alt=""
-              src='/public/logo192.png'
+              src="/public/logo192.png"
               width="50"
               height="50"
               className="d-inline-block align-top rounded-circle"
@@ -44,19 +48,24 @@ const Header = () => {
                 <Link className="nav-link" to="/about">
                   ABOUT
                 </Link>
+                {/* <Link className="nav-link" to="/about">
+                  {user && <p>{user?.email}</p>}
+                </Link> */}
               </div>
             </Nav>
             <Nav className="ms-auto">
               <div className="navbar-nav">
                 <Link className="nav-link" to="/register">
-                  <Button variant="outline-info">SIGN UP<title className="text-white">Create a account</title></Button>
+                  <Button variant="outline-info">SIGN UP</Button>
                 </Link>
                 <Link className="nav-link" to="/login">
-                  {
-                    user ? <Button variant="outline-info">LOGIN OUT</Button> :
+                  {user ? (
+                    <Button onClick={handleSignOut} variant="outline-info">
+                      LOGIN OUT
+                    </Button>
+                  ) : (
                     <Button variant="outline-info">LOGIN</Button>
-                    
-                  }
+                  )}
                 </Link>
               </div>
             </Nav>
